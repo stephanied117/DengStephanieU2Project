@@ -7,20 +7,20 @@ public class LinearEquationLogic {
     private int x2;
     private int y2;
 
-    private void start() {
+    public void start() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome! \nPlease enter a coordinate point: ");
-        LinearEquationLogic point = new LinearEquationLogic();
+        LinearEquation point = new LinearEquation();
         String pointA = scan.nextLine();
         System.out.println("Please enter another coordinate point: ");
         String pointB = scan.nextLine();
-        point.getCoordinates(pointA, pointB);
-        LinearEquation yes = new LinearEquation();
+        getCoordinates(pointA, pointB);
+
     }
 
-    public void getCoordinates(String p1, String p2) {
-        this.p1 = p1;
-        this.p2 = p2;
+    public void getCoordinates(String pointA, String pointB) {
+        p1 = pointA;
+        p2 = pointB;
     }
     public void point1() {
         int letter = 0;
@@ -42,7 +42,10 @@ public class LinearEquationLogic {
         if ((y2 - y1) % (x2 - x1) == 0) {
             return (y2 - y1) / (x2 - x1);
         }
+        return 0;
+        /*
         return (y2 - y1) + "/" + (x2 - x1);
+         */
     }
 
 }

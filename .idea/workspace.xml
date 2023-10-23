@@ -7,7 +7,6 @@
     <list default="true" id="4316a38a-8e5f-492e-b116-1e660c4e48cc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LinearEquationLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinearEquationLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LinearEquationRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinearEquationRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +22,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="1f96ec0b-6ae1-4026-803c-e13e35011273" />
+        <option name="url" value="https://github.com/stephanied117/DengStephanieU2Project.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectId" id="2WqfjTF0DEc4Kd9iKqEfy9N6k8C" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
