@@ -4,13 +4,15 @@ public class LinearEquation {
     private int x2;
     private int y1;
     private int y2;
-    private int p1;
-    private int p2;
-    public LinearEquation(int x1, int y1, int x2, int y2) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
+    private String p1;
+    private String p2;
+    public LinearEquation(String p3, String p4, int x3, int y3, int x4, int y4) {
+        this.p1 = p3;
+        this.p2 = p4;
+        this.x1 = x3;
+        this.y1 = y3;
+        this.x2 = x4;
+        this.y2 = y4;
     }
 
     public double distance() {
@@ -31,7 +33,7 @@ public class LinearEquation {
         if ((y2 - y1) % (x2 - x1) == 0) {
             return (y2 - y1) / (x2 - x1);
         }
-        return Integer.parseInt((y2 - y1) + "/" + (x2 - x1));
+        return Integer.parseInt(((y2 - y1) + "/" + (x2 - x1)));
     }
 
     public String equation() {
