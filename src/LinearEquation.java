@@ -20,26 +20,53 @@ public class LinearEquation {
     }
 
     public double yIntercept() {
-        return roundToHundredth(((((y2 - y1) / (x2 - x1)) * x1) - y1));
+        if (x2 - x1 == 0) {
+            yInterceptOrganizer();
+        } else {
+            return y1 - (((y2 - y1) / (x2 - x1)) * x1);
+        }
+        return 000000;
     }
 
-    public double slope() {
+    private String yInterceptOrganizer() {
+        String dne = "Does not exist.";
+        return (dne);
+    }
+
+    public String slope() {
         if (y2 - y1 == 0) {
-            return 0;
+            return "0";
         }
         if (x2 - x1 == 0) {
-            return 0.123456789;
+            return "undefined";
+        }
+        if ((y2 - y1) / (x2 - x1) == -1) {
+            return "-";
         }
         if ((y2 - y1) % (x2 - x1) == 0) {
-            return (y2 - y1) / (x2 - x1);
+            if ((y2 - y1) / (x2 - x1) == 1) {
+                return "";
+            }
+            return Integer.toString((y2 - y1) / (x2 - x1));
         }
-        return Integer.parseInt(((y2 - y1) + "/" + (x2 - x1)));
+        return slopeOrganizer(y2-y1, x2-x1, "/");
+    }
+
+    private String slopeOrganizer(int yDif, int xDif, String slash) {
+        if (yDif > 0 && xDif > 0) {
+            return yDif + slash + xDif;
+        } else if (yDif < 0 && xDif < 0) {
+            return Math.abs(yDif) + slash + Math.abs(xDif);
+        } else if (yDif > 0 && xDif < 0) {
+            return -1 * (yDif) + slash + Math.abs(xDif);
+        }
+        return yDif + slash + xDif;
     }
 
     public String equation() {
-        if (slope() == 0) {
+        if (slope().equals("0")) {
             return "y = " + yIntercept();
-        } else if (slope() == 0.123456789) {
+        } else if (slope().equals("undefined")) {
             return "x = " + x1;
         }
         if (yIntercept() > 0) {
@@ -53,11 +80,26 @@ public class LinearEquation {
     }
 
     public String coordinateForX(double x) {
-        return "(" + x + ", " + roundToHundredth(slope() * x + yIntercept()) + ")";
+        if (x2 - x1 ==0) {
+            if (x > x1 || x < x1) {
+                CoordOrganizer();
+            }
+        } else {
+            return "(" + x + ", " + roundToHundredth((double) (y2 - y1) / (x2 - x1) * x + yIntercept()) + ")";
+        }
+        return CoordOrganizer();
+    }
+
+    private String CoordOrganizer() {
+        String xx = "The point does not exist on the line!";
+        return xx;
     }
 
     public String lineInfo() {
-        return "The two points are: " + p1 + " and " + p2 + "\nThe equation of the line between these points is : " + equation() + "\nThe slope of this line is: " + (y2 - y1) / (x2 - x1) + "\nThe y-intercept of this line is: " + yIntercept() + "\nThe distance between these points is " + distance();
+        if (x2 - x1 == 0) {
+            return "The two points are: " + p1 + " and " + p2 + "\nThe equation of the line between these points is : " + equation() + "\nThe slope of this line is: undefined\nThe y-intercept of this line is: " + yIntercept() + "\nThe distance between these points is " + distance() + "\"";
+        }
+        return "The two points are: " + p1 + " and " + p2 + "\nThe equation of the line between these points is : " + equation() + "\nThe slope of this line is: " + roundToHundredth((double)(y2 - y1) / (x2 - x1)) + "\nThe y-intercept of this line is: " + yIntercept() + "\nThe distance between these points is " + distance() + "\"";
     }
 
     private double roundToHundredth(double toRound) {
