@@ -32,18 +32,21 @@ public class LinearEquationLogic {
         System.out.println("(o//w//o) <(" + more.coordinateForX(xVal) + ")");
         System.out.println("(.//c//.) <(Wanna go for another round? Answer with yay or nay!)");
         String answer = scan.nextLine();
-        while (!(answer.equals("nay")) || !(answer.equals("nay"))) {
-            if (answer.equals("nay")) {
-                end = true;
-            } else if (answer.equals("yay")) {
-                end = false;
-                start();
-            } else if (!(answer.equals("nay")) || !(answer.equals("nay"))){
-                System.out.println("(!//C//!) <(Your answer sucks. Answer with yay or nay!)");
-                answer = scan.nextLine();
+        while (end = false) {
+            while (!(answer.equals("nay")) || !(answer.equals("nay"))) {
+                if (answer.equals("nay")) {
+                    end = true;
+                } else if (answer.equals("yay")) {
+                    end = false;
+                    start();
+                } else if (!(answer.equals("nay")) || !(answer.equals("nay"))) {
+                    System.out.println("(!//C//!) <(Your answer sucks. Answer with yay or nay!)");
+                    answer = scan.nextLine();
+                }
             }
         }
-    }
+
+        }
 
     private boolean coordinateFormat(String coord) {
         if (!(coord.substring(0,1).equals("("))) {

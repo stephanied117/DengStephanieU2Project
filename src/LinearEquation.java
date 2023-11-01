@@ -15,6 +15,13 @@ public class LinearEquation {
         this.y2 = y4;
     }
 
+    public LinearEquation(int x3, int y3, int x4, int y4) {
+        this.x1 = x3;
+        this.y1 = y3;
+        this.x2 = x4;
+        this.y2 = y4;
+    }
+
     public double distance() {
         return roundToHundredth(Math.pow(Math.pow(Math.abs(x2 - x1), 2) + Math.pow(Math.abs(y2 - y1), 2), 0.5));
     }
